@@ -1,0 +1,79 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/utils/utils" as *;
+@use "../../assets/styles/abstracts/z-index" as index;
+
+.type-filter-dropdown {
+  position: relative;
+  display: block;
+
+  &__button {
+    padding: toRem(4px) toRem(16px);
+    border: toRem(1px) solid colors.$border-gray;
+    background-color: colors.$white;
+    cursor: pointer;
+    border-radius: toRem(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    color: colors.$medium-gray;
+    font-size: toRem(16px);
+    box-sizing: border-box;
+
+    &--open {
+      border-color: colors.$red;
+      color: colors.$red;
+    }
+
+    &:focus{
+      outline: none;
+      border-color: colors.$red;
+    }
+
+    .arrow {
+      border-width: 0 toRem(2px);
+      display: inline-block;
+      padding: toRem(3px);
+      margin-left: toRem(10px);
+
+      &--down {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__menu {
+    display: block;
+    position: absolute;
+    background-color: colors.$white;
+    border: toRem(1px) solid colors.$border-gray;
+    border-radius: toRem(10px);
+    margin-top: toRem(12px);
+    width: 100%;
+    z-index: index.$z-dropdown;
+    box-sizing: border-box;
+    box-shadow: 0 toRem(2px) toRem(10px) colors.$dark;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: toRem(8px) toRem(16px);
+    cursor: pointer;
+    height: toRem(40px);    
+
+    &:hover, &:focus {
+      background-color: colors.$gray;
+    }
+  }
+
+  &__color {
+    display: inline-block;
+    width: toRem(16px);
+    height: toRem(16px);
+    margin-right: toRem(8px);
+    border-radius: 50%;
+  }
+}

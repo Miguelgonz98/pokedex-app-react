@@ -1,0 +1,53 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/abstracts/breakpoints";
+@use "../../assets/styles/abstracts/z-index" as index;
+@use "../../assets/styles/utils/utils" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 0 toRem(50px);
+  background-color: colors.$turquoise;
+  color: colors.$white;
+  box-shadow: 0 0 toRem(15px) colors.$dark;
+  z-index: index.$z-header;
+
+  &__container {
+    display: flex;
+    gap: toRem(10px);
+    align-items: center;
+    text-decoration: none; 
+    width: fit-content;
+  }
+
+  &__logo {
+    width: toRem(40px);
+    height: toRem(40px);
+  }
+
+  &__text {
+    color: colors.$white;
+    font-size: toRem(28px);
+  }
+
+  @include breakpoints.mobile {
+    & {
+      padding: 0 toRem(30px);
+      align-items: center;
+      height: toRem(50px);
+
+      &__container {
+        justify-content: center;
+      }
+
+      &__text {
+        font-size: toRem(20px);
+      }
+
+      &__logo {
+        width: toRem(32px);
+        height: toRem(32px);
+      }
+    }
+  }
+}

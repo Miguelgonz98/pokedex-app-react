@@ -1,0 +1,28 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/abstracts/breakpoints";
+@use "../../assets/styles/utils/utils" as *;
+
+.pokemon-grid {
+    display: grid;
+    gap: toRem(24px);
+
+    @include breakpoints.mobile {
+        &{
+            grid-template-columns: repeat(1, 1fr);
+            gap: toRem(16px);
+        }
+    }
+
+    @include breakpoints.tablet {
+        &{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @include breakpoints.desktop {
+        &{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+

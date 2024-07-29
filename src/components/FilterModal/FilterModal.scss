@@ -1,0 +1,46 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/utils/utils" as *;
+@use "../../assets/styles/abstracts/z-index" as index;
+
+.filter-modal {
+  &__dropdown-menu {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: toRem(20px);
+    background-color: colors.$white;
+    border: toRem(1px) solid colors.$border-gray;
+    border-radius: toRem(10px);
+    margin-top: toRem(8px);
+    margin-bottom: toRem(8px);
+    width: 100%;
+    z-index: index.$z-dropdown;
+    box-sizing: border-box;
+    max-height: 90%;
+  }
+
+  &__dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: toRem(8px) toRem(16px);
+    cursor: pointer;
+    height: toRem(40px);
+
+    &:hover,
+    &:focus {
+      background-color: colors.$gray;
+    }
+  }
+}
+
+.filter-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: toRem(20px);
+  border-radius: toRem(10px);
+  background-color: colors.$white;
+  box-shadow: 0 toRem(2px) toRem(10px) colors.$dark;
+  width: 100%;
+  max-width: toRem(400px);
+  margin: 0 auto;
+}

@@ -1,0 +1,34 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/utils/utils" as *;
+@use "../../assets/styles/abstracts/z-index" as index;
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: colors.$dark-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: index.$z-menu;
+
+  &__modal-content {
+    background: white;
+    padding: toRem(20px);
+    position: relative;
+    box-shadow: 0 toRem(2px) toRem(10px) colors.$dark;
+    max-height: toRem(800px);
+    overflow-y: auto;
+    width: 90%;
+    max-width: toRem(400px);
+    height: 100%;
+
+    &.dropdown {
+      background: none;
+      overflow-y: hidden;
+      box-shadow: none;
+    }
+  }
+}

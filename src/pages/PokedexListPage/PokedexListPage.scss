@@ -1,0 +1,111 @@
+@use "../../assets/styles/abstracts/breakpoints";
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/abstracts/z-index" as index;
+@use "../../assets/styles/utils/utils" as *;
+
+.pokedex-content {
+  display: flex;
+  flex-direction: column;
+  padding: toRem(24px) toRem(50px);
+  gap: toRem(16px);
+
+  &__header-text {
+    color: colors.$dark;
+    font-size: toRem(24px);
+    margin: 0;
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+    gap: toRem(14px);
+  }
+
+  &__search-bar {
+    flex: 3.1;
+  }
+
+  &__dropdown {
+    flex: 1;
+  }
+
+  &__dropdown-modal {
+    display: none;
+  }
+}
+
+@include breakpoints.mobile {
+  .pokedex-content {
+    padding: toRem(16px) toRem(30px);
+
+    &__header-text {
+      font-size: toRem(16px);
+    }
+
+    &__dropdown {
+      display: none;
+    }
+
+    &__dropdown-modal {
+      display: block;
+    }
+
+    &__options {
+      flex-direction: column;
+      align-items: stretch;
+      gap: toRem(8px);
+    }
+  }
+
+  .search-header {
+    &--scrolled {
+      position: -webkit-sticky;
+      position: sticky;
+      background: white;
+      z-index: index.$z-sub-header;
+      top: toRem(50px);
+      padding: toRem(8px) toRem(35px);
+      border-bottom-right-radius: toRem(5px);
+      border-bottom-left-radius: toRem(5px);
+      height: toRem(48px);
+      box-shadow: 0 0 toRem(15px) colors.$dark;
+    }
+  }
+
+  .header-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      font-weight: bold;
+      flex: 1 1 auto;
+    }
+
+    &__options {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      flex: 1 1 auto;
+    }
+
+    &__displayed {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      order: 1;
+    }
+
+    &__hide-btn {
+      margin-left: toRem(10px);
+    }
+
+    &__show-option-btn,
+    &__hide-btn {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
+}

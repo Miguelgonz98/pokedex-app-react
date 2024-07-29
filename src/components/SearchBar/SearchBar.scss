@@ -1,0 +1,45 @@
+@use "../../assets/styles/abstracts/breakpoints";
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/utils/utils" as *;
+
+.search-bar {
+  &__wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  &__input {
+    padding-right: toRem(10px);
+    padding-left: toRem(50px);
+    border: toRem(1px) solid colors.$border-gray;
+    border-radius: toRem(5px);
+    outline: none;
+    height: toRem(36px);
+    width: 100%;
+    font-size: toRem(16px);
+
+    &:focus {
+      outline: none;
+      border-color: colors.$turquoise;
+    }
+
+    &::-webkit-input-placeholder {
+      color: colors.$medium-gray;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__button {
+    position: absolute;
+    left: toRem(12px);
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: toRem(30px);
+    height: toRem(30px);
+  }
+}

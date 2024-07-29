@@ -1,0 +1,39 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/abstracts/breakpoints";
+@use "../../assets/styles/utils/utils" as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: toRem(10px);
+
+  &__button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &__img {
+      width: toRem(30px);
+      height: toRem(30px);
+    }
+  }
+
+  &__number-page {
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    &--active {
+      font-weight: bold;
+      color: colors.$turquoise;
+    }
+
+  }
+}

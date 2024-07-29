@@ -1,0 +1,64 @@
+@use "../../assets/styles/abstracts/colors";
+@use "../../assets/styles/abstracts/breakpoints";
+@use "../../assets/styles/utils/utils" as *;
+
+.pokemon-card {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: toRem(6px);
+
+  &__container {
+    background: colors.$white;
+    border: toRem(1px) solid colors.$border-gray;
+    border-radius: toRem(5px);
+    box-shadow: 0 0 toRem(3px) colors.$dark;
+    display: flex;
+    gap: toRem(14px);
+    height: toRem(140px);
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10px);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__number {
+    font-size: toRem(12px);
+    color: colors.$dark-gray;
+    margin: 0;
+  }
+
+  &__name {
+    font-size: toRem(20px);
+    margin: toRem(4px) 0;
+    height: toRem(24px);
+  }
+
+  &__types {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(6px);
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    background-color: colors.$border-gray;
+    justify-content: center;
+  }
+
+  &__image {
+    width: toRem(120px);
+    height: toRem(120px);
+  }
+}

@@ -1,0 +1,24 @@
+@use "../../assets/styles/utils/utils" as *;
+
+.custom-checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: toRem(24px);
+  margin-right: toRem(10px);
+  top: toRem(3px);
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    height: toRem(24px);
+    width: toRem(24px);
+  }
+
+  &__checkmark {
+    display: inline-block;
+    width: toRem(24px);
+    height: toRem(24px);
+  }
+}
